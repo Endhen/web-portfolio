@@ -11,11 +11,13 @@ module.exports = {
             },
             {
                 test: /\.(svg|png)$/,
-                use: {
+                use: 
+                {
                     loader: "file-loader",
                     options: {
                         name: "[name]-[hash].[ext]",
                         outputPath: "assets",
+                        esModule: false,
                     },
                 },
             },

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+
+$theme-colors: (
+    "primary": blue,
+    "secondary": red,
+    "text": rgb(95, 95, 95),
+);
+
+$mb-1: 40px;
+
+@function color($color) {
+    @return map-get($theme-colors, $color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    color: color('text');
+    text-decoration: none;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.08rem;
+    font-weight: 300;
+}
+
+html, body {
+    height: 100%;
+}
+
+h1, h2 {
+    font-weight: 400;
+}
+
+
+body {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 20% auto;
+    grid-template-areas: 
+        "aside header"
+        "aside page";
+}
+
+aside {
+    grid-area: aside;
+
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: rgb(115, 160, 145);
+
+    * {
+        color: white;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        margin-bottom: $mb-1;
+
+        font-size: 28px;
+        font-weight: 100;
+    }
+
+    .contact { 
+        margin-bottom: 20px; 
+    }
+
+    a {
+        display: flex;
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 15px;
+
+        img {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            align-self: center;
+        }
+    }
+
+    p {
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+.page {
+    grid-area: page;
+
+    height: 500px;
+    margin: 0 8vw;
+    padding: 0 5vw;
+
+    overflow-y: scroll;
+
+    section > * {
+        margin-bottom: $mb-1;
+        line-height: 25px;
+    }
+
+    section > div {
+        display: flex;
+        align-items: center;
+
+        svg {
+            transform: scale(0.7);
+            width: 300px;
+        }
+
+        p {
+            max-width: 500px;
+            height: 100%;
+        }
+
+        &:nth-of-type(2) {
+            text-align: right;
+        }
+    }
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container {
+    height: 100px;
+    width: 100px;
+    margin-bottom: $mb-1;
+
+    border: 3px solid white;
+    align-self: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+    
+    img {
+        margin: -30px 0 0 -15px;
+    }
+}
