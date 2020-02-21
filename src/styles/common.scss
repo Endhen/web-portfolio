@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+
+$theme-colors: (
+    "primary": #769c5d,
+    "secondary": #57748c,
+    "text": rgb(95, 95, 95),
+);
+
+@function color($color) {
+    @return map-get($theme-colors, $color);
+}
+
+$mb-1: 40px;
+$width-screen-size: 700px;
+$gradient: linear-gradient(220deg, color("primary"), color("secondary"));
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    color: color('text');
+    text-decoration: none;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.08rem;
+    font-weight: 300;
+}
+
+html, body { height: 100%; overflow: hidden;}
+h1, h2 { font-weight: 400; }
+
+body {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 20% auto;
+    grid-template-areas: 
+        "aside header"
+        "aside page";
+}
+
+@media all and (max-width: $width-screen-size)  {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 100vh auto;
+        grid-template-areas: 
+            "aside" "header" "page";
+    }
+
+    html, body { height: auto; overflow: visible;}
+}
+
+::-webkit-scrollbar {
+    opacity: 0;
+    border-radius: 50px;
+    width: 8px;
+
+    &:hover {
+        background: rgb(238, 238, 238);
+        opacity: 0.1;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(88, 131, 120) !important;
+    border-radius: 50px;
+}
