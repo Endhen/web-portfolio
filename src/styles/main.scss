@@ -10,35 +10,20 @@
 
     overflow-y: scroll;
 
-    h2, & > * { width: 100%; }
+    h2, h3, & > * { width: 100%; }
+    a { color: color('primary'); text-decoration: underline;}
 
-    section > * {
+    & > * {
         margin-bottom: $mb-1;
         line-height: 28px;
     }
 }
 
-.profil {
-    @extend %page;
- 
-
-    
-    section > p { text-align: center; }
-
-    div {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        img { height: 85px; margin: 0 30px;}
-
-        p { max-width: 450px; }
-
-        &:nth-of-type(2) { text-align: right; }
-    }
-}
-
+@import './profil.scss';
 @import './technologies.scss';
+@import './projects.scss';
+@import './contact.scss';
+
 
 @media all and (max-width: $width-screen-size)  {
     .page {

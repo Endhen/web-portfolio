@@ -1,0 +1,17 @@
+.profil {
+    @extend %page;
+   
+    section > p { text-align: center; }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        img { height: 85px; margin: 0 30px;}
+
+        p { max-width: 450px; }
+
+        &:nth-of-type(2) { text-align: right; }
+    }
+}
