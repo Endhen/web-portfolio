@@ -1,3 +1,24 @@
+
+body {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 20vh auto;
+    grid-template-areas: 
+        "aside header"
+        "aside page";
+}
+
+@media all and (max-width: $width-screen-size)  {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 100vh 20vh auto;
+        grid-template-areas: 
+            "aside" "header" "page";
+    }
+
+    html, body { height: auto; overflow: visible;}
+}
+
 aside {
     &::before{
         content: '';
@@ -26,7 +47,7 @@ aside {
 
     h1 { font-size: 22px; margin-bottom: 5px; }
     h2 {
-        margin-bottom: $mb-1;
+        margin-bottom: space('large');
 
         font-size: 28px;
         font-weight: 100;
@@ -56,8 +77,8 @@ aside {
     }
 }
 
-$content-margin: 8vw;
-$content-padding: 5vw;
+$content-margin: 8vw !default;
+$content-padding: 5vw !default;
 
 header {
     grid-area: header;
@@ -76,6 +97,8 @@ header {
     }
 }
 
+.content { padding: space('large') 0; }
+
 .profile {
     display: flex;
     flex-direction: column;
@@ -84,7 +107,7 @@ header {
 .profile__img__container {
     height: 100px;
     width: 100px;
-    margin-bottom: $mb-1;
+    margin-bottom: space('large');
     
     border: 4px solid white;
     align-self: center;
@@ -97,3 +120,14 @@ header {
     }
 }
 
+@media all and (max-width: $width-screen-size)  {
+
+    header, .content { margin: 0; }
+    aside {
+        background: gradient(220deg);
+        
+        &::before {
+            display: none;
+        }
+    }
+}

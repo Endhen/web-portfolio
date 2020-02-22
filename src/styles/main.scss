@@ -4,23 +4,28 @@
 %page {
     grid-area: page;
 
-    height: 500px;
+    height: 510px;
     margin: 0 $content-margin;
     padding: 0 $content-padding;
 
     overflow-y: scroll;
 
-    h2, h3, & > * { width: 100%; }
+    h2, h3, & > * { 
+        max-width: 100%; 
+        min-width: 80% ; 
+        margin: 0 0 space('large') 0; 
+    }
+    
     a { color: color('primary'); text-decoration: underline;}
 
     & > * {
-        margin-bottom: $mb-1;
+        margin-bottom: space('large');
         line-height: 28px;
     }
 }
 
 @import './profil.scss';
-@import './technologies.scss';
+@import './skills.scss';
 @import './projects.scss';
 @import './contact.scss';
 
@@ -33,13 +38,16 @@
         
         div {
             flex-direction: column;
-
             img { margin: 30px 0; }
         }
 
         overflow-y: unset; 
-        height: 1000px;
+        height: auto;
     }
+    %page { overflow-y: unset; }
+
+    .contact > * { min-width: 80%; }
 }
+
 
 

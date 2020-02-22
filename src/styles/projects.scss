@@ -1,26 +1,27 @@
 .projects {
     @extend %page;
 
-    .slider {
+    .slider, .project {
         display: flex;
-
-    }
-    .frame {
-        width: auto;
     }
 
-    .frame img {
-        border-radius: 15px;
+    .frame > img {
         height: 230px;
+        border-radius: 15px;
         box-shadow: -15px 11px 19px 0px #0000002e;
     }
 
-    .description {
+    h2 { margin-bottom: 20px; }
+
+    .project__description {
         position: relative;
         margin-top: 50px;
         padding: 10px 30px 0 40px;
+        max-width: 250px;
         
         font-size: 0.8em;
+
+        h3 { margin-bottom: 20px; font-size: 1.5em;}
 
         &::before{
             content: '';
@@ -66,4 +67,11 @@
             margin: 2px 0 0 13px;
         }
     }
+}
+
+@media all and (max-width: $width-screen-size)  {
+    .projects { margin: 0 auto; }
+    .project { flex-direction: column; }
+    .slider { justify-content: center; }
+    .project__description { margin-top: 0 !important; }
 }

@@ -1,17 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
 
+$width-screen-size: 700px;
+
 $theme-colors: (
     "primary": #769c5d,
     "secondary": #57748c,
     "text": rgb(95, 95, 95),
 );
 
+$font-size: (
+    "normal": 1em,
+    "large": 1.2em,
+);
+
+$space: (
+    "x-small": 8px,
+    "small": 20px,
+    "medium": 30px,
+    "large": 40px,
+);
+
 @function color($color) {
     @return map-get($theme-colors, $color);
 }
 
-$mb-1: 40px;
-$width-screen-size: 700px;
+@function font-size($size) {
+    @return map-get($font-size, $size);
+}
+
+@function space($size) {
+    @return map-get($space, $size);
+}
 
 @function gradient($deg) {
     @return linear-gradient($deg, color("primary"), color("secondary"));
@@ -33,26 +52,6 @@ $width-screen-size: 700px;
 
 html, body { height: 100%; overflow: hidden;}
 h1, h2 { font-weight: 400; }
-
-body {
-    display: grid;
-    grid-template-columns: 25% auto;
-    grid-template-rows: 20% auto;
-    grid-template-areas: 
-        "aside header"
-        "aside page";
-}
-
-@media all and (max-width: $width-screen-size)  {
-    body {
-        grid-template-columns: auto;
-        grid-template-rows: 100vh auto;
-        grid-template-areas: 
-            "aside" "header" "page";
-    }
-
-    html, body { height: auto; overflow: visible;}
-}
 
 ::-webkit-scrollbar {
     opacity: 0;

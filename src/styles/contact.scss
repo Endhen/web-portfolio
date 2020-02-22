@@ -8,18 +8,21 @@ $padding: 30px;
 
 .contact {
     @extend %page;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: $padding;
+    margin: auto auto;
+    width: 450px;
 
     form {
-        h2 { margin-bottom: $mb-1; }
+        h2 { margin-bottom: space('large'); }
+
         display: flex;
         position: relative;
         flex-direction: column;
         height: 100%;
-        max-width: 500px;
         padding: $padding;
 
         background-color: white;
@@ -44,6 +47,12 @@ $padding: 30px;
             border-radius: 50px;
             background: gradient(195deg);
         }
+    }
+}
+
+@media all and (max-width: $width-screen-size)  {
+    .contact {
+        margin: auto auto;
     }
 }
 
