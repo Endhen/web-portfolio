@@ -24,13 +24,14 @@
     }
 }
 
-@import './profil.scss';
-@import './skills.scss';
-@import './projects.scss';
-@import './contact.scss';
+@import '../pages/projects/projects.scss';
+@import '../pages/skills/skills.scss';
+@import '../pages/profile/profile.scss';
+@import '../pages/contact/contact.scss';
 
 
-@media all and (max-width: $width-screen-size)  {
+
+@media all and (max-width: $width-screen-size) {
     .page {
         h2, p {
             text-align: center;
@@ -44,6 +45,7 @@
         overflow-y: unset; 
         height: auto;
     }
+
     %page { overflow-y: unset; }
 
     .contact > * { min-width: 80%; }
