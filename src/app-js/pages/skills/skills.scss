@@ -51,11 +51,8 @@
     }
 }
 
-@media all and (max-width: $width-screen-size)  {
-    .technologies {
-        margin: 0;
-        padding: 0 4vw;
-    }
+
+@media all and (max-width: 1290px)  {
     
     .typing-animation {
         flex-direction: column;

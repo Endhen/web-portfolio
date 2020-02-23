@@ -14,8 +14,7 @@ const ProjectsPage = () => {
                 Chez Open Classroom le travail de chaques projet est 
                 formalisé et présenté, renforçant ainsi les 
                 compétences de communication. Pour toutes questions 
-                n'hésitez pas à me contacter sur 
-                <a href="#">LinkedIn</a>.
+                n'hésitez pas à me contacter sur <a href="#">LinkedIn</a>.
             </p>
             <div className="slider">
                 <div className="left">

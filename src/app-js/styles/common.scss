@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
 
-$width-screen-size: 700px;
+$width-screen-size: 1000px;
 
 $theme-colors: (
     "primary": #769c5d,
@@ -36,7 +36,7 @@ $space: (
     @return linear-gradient($deg, color("primary"), color("secondary"));
 }
 
-::selection { color: white; background: color('primary'); }
+::selection { color: white; background: #658677; }
 
 * {
     margin: 0;
@@ -50,7 +50,7 @@ $space: (
     font-weight: 300;
 }
 
-html, body { height: 100%; overflow: hidden;}
+html, body { height: 100vh; overflow: hidden; }
 h1, h2 { font-weight: 400; }
 
 ::-webkit-scrollbar {
