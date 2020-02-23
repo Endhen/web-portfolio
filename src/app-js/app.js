@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
  
    
 function App() {
+
     return (
         <Router>
             <Switch>

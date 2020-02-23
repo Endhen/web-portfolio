@@ -2,9 +2,7 @@
 .projects {
     @extend %page;
 
-    .slider, .project {
-        display: flex;
-    }
+    .slider, .project { display: flex; }
 
     .frame > img {
         height: 230px;
@@ -69,6 +67,26 @@
             margin: 2px 0 0 13px;
         }
     }
+
+    .tags > span {
+        margin-left: 5px;
+        padding: 3px;
+        border-radius: 4px;
+    
+        color: white;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .tag-html { background-color: rgb(228, 77, 38); }
+    .tag-css { background-color: rgb(46, 126, 194); }
+    .tag-bootstrap { background-color: rgb(86, 61, 124); }
+    .tag-js { background-color: rgb(240, 219, 79); }
+    .tag-jquery { background-color: rgb(107, 160, 171); }
+    .tag-php { background-color: rgb(137, 147, 190); }
+    .tag-symfony-3, .tag-symfony-4 { background-color: black; }
+    .tag-word-press { background-color: rgb(33, 117, 154); }
+    .tag-wix { background-color: #2398ff; }
 }
 
 @media all and (max-width: 1290px)  {
