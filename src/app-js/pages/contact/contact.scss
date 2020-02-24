@@ -29,6 +29,7 @@ $padding: 30px;
             margin-bottom: 20px;
             padding: 10px;
             border: none;
+            border-radius: 3px;
             background-color: #f9f9f9;
         }
         
@@ -46,6 +47,27 @@ $padding: 30px;
             background: gradient(195deg);
         }
     }
+    p { font-size: 0.9em; color: #ff7171; margin-bottom: 5px;}
+    .error {
+        border: 1px solid #ff7171 * 2;
+        
+        &::placeholder { color: #ff7171; opacity: 1; }
+        background-color: #fff7f7;
+    }
+}
+
+.mail-send {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 100px auto;
+    height: 100px;
+    width: 400px;
+
+    border: 2px solid #cee2cd;
+    border-radius: 10px;
+    p { text-align: center; }
 }
 
 @media all and (max-width: $width-screen-size)  {
