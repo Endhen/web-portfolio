@@ -108,6 +108,63 @@ header {
         justify-content: space-between;
         
         width: 100%;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            height: 60px;
+        }
+
+        .indicator {
+            position: absolute;
+            align-self: center !important;
+            margin-top: 1px;
+            z-index: -2;
+            border-radius: 50px;
+            height: 30px;
+            width: 100px;
+            
+            color: white;
+            background: gradient(195deg);
+            box-shadow: -4px 5px 9px 0px #0000001a;
+            transition: 0.5s;
+            transition-delay: 0.2s;
+            transition-timing-function: ease-out;
+        }
+
+        .is-active, a:hover {
+            color: white;
+            transition: 0.2s;
+            transition-delay: 0.2s;
+        }
+
+        .start-profile, a:nth-child(1):hover ~ .indicator {
+            left: 10%;
+            opacity: 1;
+            width: 10%;
+        }
+        .start-skills, a:nth-child(2):hover ~ .indicator {
+            left: 24%;
+            opacity: 1;
+            width: 168px;
+        }
+        .start-projects, a:nth-child(3):hover ~ .indicator {
+            left: 48%;
+            opacity: 1;
+            width: 13%;
+        }
+        .start-blog, a:nth-child(4):hover ~ .indicator {
+            left: 64%;
+            opacity: 1;
+            width: 70px;
+        }
+        .start-contact, a:nth-child(5):hover ~ .indicator {
+            left: 76%;
+            opacity: 1;
+            width: 115px;
+        }
     }
 
     .minified {
@@ -190,6 +247,8 @@ header {
     header, .content { margin: 0; }
     .container { grid-template-rows: 50px auto; }
     .btn-open, .btn-close { display: flex !important; }
+    .indicator { display: none; }
+    nav a { color: white !important; }
     aside {
         background: gradient(220deg);
         
@@ -199,13 +258,3 @@ header {
     }
 }
 
-.menu-selection {
-    position: absolute;
-    z-index: -5;
-    border-radius: 50px;
-    height: 30px;
-    width: 100px;
-
-    background: gradient(195deg);
-    box-shadow: -4px 5px 9px 0px #0000001a;
-}

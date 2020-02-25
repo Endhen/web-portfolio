@@ -18,12 +18,13 @@ function App() {
         <Router>
             <header key="header">
                 <nav className="menu">
-                    <Link to="/profile">Profil</Link>
-                    <Link to="/skills">Compétences</Link>
-                    <Link to="/projects">Projets</Link>
-                    <a href="" target="">Blog</a>
-                    <Link to="/contact">Contact</Link>
+                    <Link data-name="profile" to="/profile">Profil</Link>
+                    <Link data-name="skills" to="/skills">Compétences</Link>
+                    <Link data-name="projects" to="/projects">Projets</Link>
+                    <a data-name="blog" href="" target="">Blog</a>
+                    <Link data-name="contact" to="/contact">Contact</Link>
                     <div className="btn-close">fermer le menu ⵝ</div>
+                    <div className="indicator"></div>
                 </nav>
                 <div className="btn-open">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" className="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
