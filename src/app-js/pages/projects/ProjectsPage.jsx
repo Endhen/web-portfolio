@@ -103,16 +103,16 @@ class ProjectsPage extends Component {
                             </div>
                             <h2>{project.title}</h2>
                             <p className="tags">
-                                {project.tech.map((tech) => {
-                                        return <span className={`tag-${tech}`}>{tech}</span>
+                                {project.tech.map((tech, index) => {
+                                        return <span key={tech} className={`tag-${tech}`}>{tech}</span>
                                 })}
                             </p>
                         </div>
                         <div className="project__description">
                             <h3>Réalisations</h3>
                             <ul>
-                                {project.realisations.map((realisation) => {
-                                    return <li>{realisation}</li>
+                                {project.realisations.map((realisation, index) => {
+                                    return <li key={index}>{realisation}</li>
                                 })}
                             </ul>
                         </div>

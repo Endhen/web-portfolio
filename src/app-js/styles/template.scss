@@ -4,8 +4,8 @@ body {
     grid-template-columns: 30% 70%;
     grid-template-rows: 20vh 80vh;
     grid-template-areas: 
-        "aside header"
-        "aside page";
+        "aside container"
+        "aside container";
 }
 
 @media all and (max-width: $width-screen-size)  {
@@ -13,10 +13,18 @@ body {
         grid-template-columns: auto;
         grid-template-rows: 100vh 50px auto;
         grid-template-areas: 
-            "aside" "header" "page";
+            "aside" "container" "container";
     }
 
     html, body { overflow: visible;}
+}
+
+.container {
+    grid-area: container;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: "header" "page";
 }
 
 aside {
@@ -82,8 +90,11 @@ aside {
 $content-margin: 8vw !default;
 $content-padding: 5vw !default;
 
+
+
 header {
     grid-area: header;
+    position: relative;
     display: flex;
     align-items: center;
     min-width: 70%;
@@ -102,7 +113,7 @@ header {
     .minified {
         position: fixed;
         z-index: 10;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         top: 0;
@@ -177,6 +188,7 @@ header {
 @media all and (max-width: $width-screen-size)  {
 
     header, .content { margin: 0; }
+    .container { grid-template-rows: 50px auto; }
     .btn-open, .btn-close { display: flex !important; }
     aside {
         background: gradient(220deg);
@@ -185,4 +197,15 @@ header {
             display: none;
         }
     }
+}
+
+.menu-selection {
+    position: absolute;
+    z-index: -5;
+    border-radius: 50px;
+    height: 30px;
+    width: 100px;
+
+    background: gradient(195deg);
+    box-shadow: -4px 5px 9px 0px #0000001a;
 }
