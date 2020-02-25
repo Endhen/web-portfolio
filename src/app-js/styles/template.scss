@@ -11,7 +11,7 @@ body {
 @media all and (max-width: $width-screen-size)  {
     body {
         grid-template-columns: auto;
-        grid-template-rows: 100vh 20vh auto;
+        grid-template-rows: 100vh 50px auto;
         grid-template-areas: 
             "aside" "header" "page";
     }
@@ -92,11 +92,62 @@ header {
 
     font-size: 1.2em;
 
-    nav {
+    .menu {
         display: flex;
         justify-content: space-between;
         
         width: 100%;
+    }
+
+    .minified {
+        position: fixed;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        right: 0; 
+        width: 0;
+        height: 100%;
+        opacity: 0;
+        background-color: #24312d;
+
+        a {
+            &::before {
+                content: '▷ ';
+            }
+            padding: 40px;
+            
+            color: #d8d8d8;
+            border-bottom: 1px solid #909090;
+        }
+
+        * { min-width: 80vw; }
+
+    }
+    .btn-close {
+        display: none;
+        color: #909090;
+        justify-content: flex-end;
+        padding: 50px;
+    }
+    .btn-open {
+        z-index: 9;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 10px;
+        border: 1px solid white;
+        border-radius: 50%;
+
+        background: gradient(220deg);
+        
+        svg { width: 20px; }
+        path { fill: white; }
     }
 }
 
@@ -126,6 +177,7 @@ header {
 @media all and (max-width: $width-screen-size)  {
 
     header, .content { margin: 0; }
+    .btn-open, .btn-close { display: flex !important; }
     aside {
         background: gradient(220deg);
         

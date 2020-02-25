@@ -49,6 +49,7 @@
     }
 
     %page { overflow-y: unset; }
+    html { overflow-x: hidden; }
 
     .contact > * { min-width: 80%; }
 }
