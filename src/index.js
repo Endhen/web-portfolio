@@ -11,7 +11,6 @@ import { App } from './app-js/app.js';
 ReactDOM.render(<App/>, document.getElementById('root'));
 
 
-
 // Responsive menu
 
 let menuLinks = undefined
@@ -63,7 +62,6 @@ const isActiveColorChange = () =>  {
         isActive.removeAttribute("style")
     }
 
-    console.log(menuLinks)
     menuLinks.forEach(link => {
         link.removeAttribute("style")
         link.addEventListener("mouseenter", handleMouseEnter)
@@ -100,7 +98,7 @@ const setMenuSize = () => {
     
     // The menu minified verion and its events are defined 
     // depending on screen size
-    if (window.matchMedia(`(max-width: 1000px)`).matches) {
+    if (window.matchMedia(`(max-width: 1070px)`).matches) {
         menu.classList.add("minified")
         menuLinks = document.querySelectorAll('.minified a')
         

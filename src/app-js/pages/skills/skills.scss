@@ -20,7 +20,7 @@
 
         [alt~="MySQL"] { max-width: 80px; }
 
-        svg:not(:hover) { fill: grey; }
+        svg:not(.selected) { fill: grey; }
     }
 
     .illustration {
@@ -31,7 +31,13 @@
             position: absolute;
             margin: 55px 30px;
             padding: 0 20px;
+            width: 400px;
+            height: 200px;
             color: white;
+            background-color: transparent;
+            border:none;
+            overflow: hidden;
+            resize: none;
         }
     }
 
