@@ -9,32 +9,35 @@ import affinityDesigner from './assets/Affinity_Designer.png'
 import affinityPhoto from './assets/Affinity_Photo.png'
 import git from './assets/Git.svg'
 
+function rand(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 class SkillsPage extends Component {
 
     state = {
         typing: 'html',
-        screen: "html code",
+        screen: '<head>\n    <title>Niveau HTML</title>\n    <meta name="html5">\n    <meta name="level" value="90%">\n</head>\n',
         svg: {
             html: {
                 class: 'selected',
-                text: 'code html',
+                text: '<head>\n    <title>Niveau HTML</title>\n    <meta name="html5">\n    <meta name="level" value="90%">\n</head>\n',
             },
             css: {
                 class: '',
-                text: 'code css',
+                text: "css {\n    content: 'Niveau CSS3';\n    level: 80%;\n    framework: bootstrap(40%);\n    preprocessor: sass(40%);\n}",
             },
             js: {
                 class: '',
-                text: 'code js',
+                text: 'const getSkillLevel = (skill) => {\n    skill.name = "javascript";\n    skill.levelPercent = 70;\n    skill.framework = {\n        jQuery: 40,\n        React: 50, // Ce portfolio est une SPA React\n    };\n    skill.bundler = "webpack";\n    return skill;\n}',
             },
             sql: {
-                class: '',
-                text: 'code sql',
+                class: '',    
+                text: 'CREATE TABLE skills (\n    skillName varchar(255),\n    levelPercent int,\n);\nINSERT INTO skills (skillName, levelPercent)\nVALUES ("sql", 30);',
             },
             php: {
                 class: '',
-                text: 'code php',
+                text: '<?php \n\nfunction getPHPSkill(Skill $skill):Skill {\n    $skill\n        ->setName("php")\n        ->setLevel(70)\n        ->setFramework("Symfony");\n    return $skill;\n}',
             },
         },
     }
@@ -71,16 +74,16 @@ class SkillsPage extends Component {
                 let delay = undefined
 
                 await new Promise(r => {
-                    delay = setTimeout(r, 100)
+                    delay = setTimeout(r, rand(40,50))
                 });
 
                 this.setState({screen: this.state.screen + letter})
                 
-                
+                // If an other typing is occuring
                 if (this.state.typing != code) {
                     // We cancel without delay
                     clearTimeout(delay)
-                    // Clear the screen
+                    // Clear eventual typing 
                     this.setState({screen: ''})
                     // And stop writting
                     break
