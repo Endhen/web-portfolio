@@ -26,19 +26,27 @@
     .illustration {
         position: relative;
         justify-content: start;
+        color: white;
 
         .screen {
             position: absolute;
             margin: 55px 30px;
             padding: 0 20px;
-            width: 400px;
-            height: 200px;
             line-height: 20px;
-            color: white;
             background-color: transparent;
             border:none;
             overflow: hidden;
             resize: none;
+        }
+
+        .ace-tomorrow-night .ace_gutter,
+        .ace-tomorrow-night .ace_gutter-active-line {
+            background-color: rgba($color: #000000, $alpha: 0);
+        }
+
+        .ace_scroller {
+            width: 370px;
+            height: 300px;
         }
     }
 

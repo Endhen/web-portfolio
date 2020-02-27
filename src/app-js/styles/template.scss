@@ -244,7 +244,7 @@ header {
 
 @media all and (max-width: $width-screen-size)  {
 
-    header, .content { margin: 0; }
+    header, .content { margin: 0; width: auto; }
     .container { grid-template-rows: 50px auto; }
     .btn-open, .btn-close { display: flex !important; }
     .indicator { display: none; }

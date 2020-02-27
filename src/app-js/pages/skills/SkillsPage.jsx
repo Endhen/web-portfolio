@@ -1,4 +1,13 @@
 import React, { Component } from 'react'
+import AceEditor from "react-ace"
+
+import "ace-builds/src-noconflict/mode-html"
+import "ace-builds/src-noconflict/mode-css"
+import "ace-builds/src-noconflict/mode-javascript"
+import "ace-builds/src-noconflict/mode-sql"
+import "ace-builds/src-noconflict/mode-php"
+import "ace-builds/src-noconflict/theme-tomorrow_night"
+
 
 import codingDev from './assets/Coding_Dev.svg'
 import gSuite from './assets/G_Suite.svg'
@@ -13,6 +22,8 @@ function rand(min, max) {
     return Math.random() * (max - min) + min;
 }
 
+// const myCodeMirror = CodeMirror.fromTextArea(myTextArea);
+
 class SkillsPage extends Component {
 
     state = {
@@ -25,9 +36,9 @@ class SkillsPage extends Component {
             },
             css: {
                 class: '',
-                text: "css {\n    content: 'Niveau CSS3';\n    level: 80%;\n    framework: bootstrap(40%);\n    preprocessor: sass(40%);\n}",
+                text: "css {\n    content: 'Niveau CSS3';\n    level: '80%';\n    framework: bootstrap('40%');\n    preprocessor: sass('40%');\n}",
             },
-            js: {
+            javascript: {
                 class: '',
                 text: 'const getSkillLevel = (skill) => {\n    skill.name = "javascript";\n    skill.levelPercent = 70;\n    skill.framework = {\n        jQuery: 40,\n        React: 50, // Ce portfolio est une SPA React\n    };\n    skill.bundler = "webpack";\n    return skill;\n}',
             },
@@ -93,8 +104,8 @@ class SkillsPage extends Component {
     }
 
     render() {
-        const { html, css, js, sql, php } = this.state.svg
-        const screen = this.state.screen
+        const { html, css, javascript, sql, php } = this.state.svg
+        const { screen, typing } = this.state
 
         return (
             <section className="technologies">
@@ -118,15 +129,29 @@ class SkillsPage extends Component {
                                     <path fillOpacity="1" opacity="1" fillRule="evenodd" d="M4.674102783203125 53.0089111328125L0 0L51.4285888671875 0L46.75445556640625 53.0089111328125L25.71429443359375 60L4.674102783203125 53.0089111328125ZM41.2901611328125 17.04913330078125L41.93304443359375 10.71429443359375L9.49554443359375 10.71429443359375L10.2723388671875 17.04913330078125L26.732177734375 17.04913330078125L25.86163330078125 17.41070556640625L10.848236083984375 23.6651611328125L11.330352783203125 29.8660888671875L11.357147216796875 29.8526611328125L11.357147216796875 29.8660888671875L33.62945556640625 29.93304443359375L33.1339111328125 38.18304443359375L25.80804443359375 40.24554443359375L18.763397216796875 38.46429443359375L18.3348388671875 33.3348388671875L11.785736083984375 33.3348388671875L12.642852783203125 43.232177734375L25.875 47.14288330078125L39.02679443359375 43.29913330078125L40.7410888671875 23.6651611328125L25.80804443359375 23.6651611328125L25.84820556640625 23.65179443359375L41.2901611328125 17.04913330078125Z"/>
                                 </g>
                             </svg>
-                            <svg onMouseOver={e => { this.handleMouseOver(e, 'js')}} className={js.class} fill="#f7e018" xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                            <svg onMouseOver={e => { this.handleMouseOver(e, 'javascript')}} className={javascript.class} fill="#f7e018" xmlns="http://www.w3.org/2000/svg" height="60" width="60">
                                 <g opacity="1">
                                     <path fillOpacity="1" opacity="1" fillRule="evenodd" d="M53.5714111328125 0L6.428558349609375 0C2.87945556640625 0 0 2.87945556640625 0 6.4285888671875L0 53.5714111328125C0 57.12054443359375 2.87945556640625 60 6.428558349609375 60L53.5714111328125 60C57.12054443359375 60 60 57.12054443359375 60 53.5714111328125L60 6.4285888671875C60 2.87945556640625 57.12054443359375 0 53.5714111328125 0ZM35.71875 49.5401611328125C37.3660888671875 52.80804443359375 40.75445556640625 55.299072265625 45.9910888671875 55.299072265625C51.3348388671875 55.299072265625 55.32586669921875 52.51336669921875 55.32586669921875 47.45086669921875C55.32586669921875 42.736572265625 52.6339111328125 40.6339111328125 47.83929443359375 38.58477783203125L46.43304443359375 37.98211669921875C44.0089111328125 36.924072265625 42.96429443359375 36.24102783203125 42.96429443359375 34.55352783203125C42.96429443359375 33.1875 44.0089111328125 32.142822265625 45.65625 32.142822265625C47.27679443359375 32.142822265625 48.3214111328125 32.82586669921875 49.28570556640625 34.55352783203125L53.6785888671875 31.74102783203125C51.83038330078125 28.47320556640625 49.2589111328125 27.2276611328125 45.66961669921875 27.2276611328125C40.6473388671875 27.2276611328125 37.41961669921875 30.44195556640625 37.41961669921875 34.674072265625C37.41961669921875 39.267822265625 40.11163330078125 41.45086669921875 44.18304443359375 43.17852783203125L45.58929443359375 43.78125C48.17413330078125 44.91961669921875 49.70086669921875 45.6026611328125 49.70086669921875 47.53125C49.70086669921875 49.15179443359375 48.20086669921875 50.31695556640625 45.87054443359375 50.31695556640625C43.09820556640625 50.31695556640625 41.51788330078125 48.85711669921875 40.3125 46.88836669921875L35.71875 49.5401611328125ZM32.65179443359375 46.794677734375C32.65179443359375 52.63397216796875 29.22320556640625 55.29913330078125 24.227691650390625 55.29913330078125C19.71429443359375 55.29913330078125 17.102691650390625 52.96875 15.763397216796875 50.14288330078125L20.357147216796875 47.37054443359375C21.2410888671875 48.9375 22.044647216796875 50.263427734375 23.986602783203125 50.263427734375C25.8348388671875 50.263427734375 27.013427734375 49.54022216796875 27.013427734375 46.71429443359375L27.013427734375 27.54913330078125L32.65179443359375 27.54913330078125L32.65179443359375 46.794677734375Z"/>
                                 </g>
                             </svg>
                         </div>
                         <div className="illustration">
-                            <textarea value={screen} onChange={(e) => {() => { return screen }}} className="screen">
-                            </textarea>
+                        <AceEditor
+                            className="screen"
+                            mode={typing}
+                            theme="tomorrow_night"
+                            onChange={() => { return screen }}
+                            value={screen}
+                            name="screen"
+                            editorProps={{ $blockScrolling: false }}
+                            highlightActiveLine={false}
+                            setOptions={{
+                                blockScrolling: true,
+                                readOnly: true,
+                                showLineNumbers: true,
+                                tabSize: 4,
+                            }}
+                        />
                             <img className="writting-dev" src={codingDev} alt="Écran de présentaion des comptétences"/>
                         </div>                              
                         <div className="back-icons">
