@@ -10,11 +10,17 @@ import ProfilePage from './pages/profile/ProfilePage.jsx'
 import LegalNotice from './pages/legal-notice/LegalNotice.jsx'
 import Error404 from './pages/error/Error404.jsx'
 
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom"
+import { 
+    BrowserRouter as Router, 
+    Route, 
+    Switch, 
+    Redirect, 
+    Link, 
+} from "react-router-dom"
  
    
 function App() {
-
+    
     return (
         <Router>
             <header key="header">
