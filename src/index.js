@@ -11,7 +11,7 @@ import { App } from './app-js/app.js';
 ReactDOM.render(<App/>, document.getElementById('root'));
 
 
-// Responsive menu
+/*--- Responsive menu ---*/
 
 let menuLinks = undefined
 const btnOpen = document.getElementsByClassName('btn-open')[0]
@@ -53,23 +53,26 @@ const updateMenuIndicator = e => {
 const isActiveColorChange = () =>  {
     const menuLinks = document.querySelectorAll('.menu a:not(.is-active)')
     const isActive = document.getElementsByClassName('is-active')[0]
-    isActive.removeEventListener("mouseenter", handleMouseEnter)
-    isActive.removeEventListener("mouseleave", handleMouseLeave)
-    const handleMouseEnter = () => {
-        isActive.setAttribute("style", "color: rgb(95, 95, 95)")
-    }
-    const handleMouseLeave = () => {
-        isActive.removeAttribute("style")
-    }
 
-    menuLinks.forEach(link => {
-        link.removeAttribute("style")
-        link.addEventListener("mouseenter", handleMouseEnter)
-    })
-
-    menuLinks.forEach(link => {
-        link.addEventListener("mouseleave", handleMouseLeave)
-    })
+    if (isActive != undefined) {
+        isActive.removeEventListener("mouseleave", resetStyleAttribut)
+        isActive.removeEventListener("mouseenter", changeColorText)
+        const changeColorText = () => {
+            isActive.setAttribute("style", "color: rgb(95, 95, 95)")
+        }
+        const resetStyleAttribut = () => {
+            isActive.removeAttribute("style")
+        }
+        
+        menuLinks.forEach(link => {
+            link.removeAttribute("style")
+            link.addEventListener("mouseenter", changeColorText)
+        })
+        
+        menuLinks.forEach(link => {
+            link.addEventListener("mouseleave", resetStyleAttribut)
+        })
+    }
 }
 
 
@@ -98,7 +101,7 @@ const setMenuSize = () => {
     
     // The menu minified verion and its events are defined 
     // depending on screen size
-    if (window.matchMedia(`(max-width: 1070px)`).matches) {
+    if (window.matchMedia(`(max-width: 1020px)`).matches) {
         menu.classList.add("minified")
         menuLinks = document.querySelectorAll('.minified a')
         
@@ -121,11 +124,29 @@ const setMenuSize = () => {
     }
 }
 
+const setMenuStyle = () => {
+    const indicator = document.getElementsByClassName('indicator')[0]
+    const menu = document.querySelector('.menu')
+
+    if (indicator.attributes['style'] != undefined) {
+        menu.classList.add('no-indicator')
+    } else {
+        menu.classList.remove('no-indicator')
+    }
+}
+
+
 setFocus()
 setMenuSize()
 window.onresize = setMenuSize
 document.getElementsByClassName('content')[0]
-        .addEventListener('DOMNodeInserted', (event) => {
+.addEventListener('DOMNodeInserted', (event) => {
     setFocus()
 });
+
+setMenuStyle()
+const links = document.getElementsByTagName('a')
+for (let a of links) {
+    a.addEventListener("click", setMenuStyle)
+}
 

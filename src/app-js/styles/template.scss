@@ -167,6 +167,12 @@ header {
         }
     }
 
+    .no-indicator > a:hover {
+        color: color('primary');
+        font-weight: 400;
+        transition-delay: 0s;
+    }
+
     .minified {
         position: fixed;
         z-index: 10;

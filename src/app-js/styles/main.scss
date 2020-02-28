@@ -10,6 +10,7 @@
     padding: 0 $content-padding;
 
     overflow-y: scroll;
+    overflow-x: hidden;
 
     h2, h3, & > * { 
         max-width: 100%; 
@@ -29,6 +30,7 @@
 @import '../pages/skills/skills.scss';
 @import '../pages/profile/profile.scss';
 @import '../pages/contact/contact.scss';
+@import '../pages/legal-notice/legal-notice.scss';
 @import '../pages/error/error404.scss';
 
 
@@ -48,7 +50,7 @@
         height: auto;
     }
 
-    %page { overflow-y: unset; }
+    %page { overflow-y: unset; overflow-x: unset; }
     html { overflow-x: hidden; }
 
     .contact > * { min-width: 80%; }

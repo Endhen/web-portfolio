@@ -7,6 +7,7 @@ import ContactPage from './pages/contact/ContactPage.jsx'
 import ProjectsPage from './pages/projects/ProjectsPage.jsx'
 import SkillsPage from './pages/skills/SkillsPage.jsx'
 import ProfilePage from './pages/profile/ProfilePage.jsx'
+import LegalNotice from './pages/legal-notice/LegalNotice.jsx'
 import Error404 from './pages/error/Error404.jsx'
 
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom"
@@ -46,6 +47,9 @@ function App() {
                     </Route>
                     <Route path="/profile">
                         <ProfilePage/>
+                    </Route>
+                    <Route path="/legal-notice">
+                        <LegalNotice/>
                     </Route>
                     <Route exact path="/">
                         <Redirect to="/profile"/>
