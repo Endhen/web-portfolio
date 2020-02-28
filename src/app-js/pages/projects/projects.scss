@@ -25,10 +25,12 @@
         box-shadow: -15px 11px 19px 0px #0000002e;
     }
 
+    & > h2 { cursor: pointer; }
+
     h2 { 
         position: relative;
         margin-bottom: 20px;
-        cursor: pointer; 
+         
 
         .svg-inline--fa {
             padding: 0 5px 0 5px;
@@ -63,7 +65,10 @@
         }
     }
     
-
+    .project.mode-cdp h2 {
+        margin-left: 0;
+    }
+    
     .project__description {
         position: relative;
         margin-top: 50px;

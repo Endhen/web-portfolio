@@ -13,7 +13,6 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 /*--- Responsive menu ---*/
 
-let menuLinks = undefined
 const btnOpen = document.getElementsByClassName('btn-open')[0]
 const btnClose = document.getElementsByClassName('btn-close')[0]
 

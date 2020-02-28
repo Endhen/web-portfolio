@@ -22,13 +22,11 @@ function rand(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-// const myCodeMirror = CodeMirror.fromTextArea(myTextArea);
-
 class SkillsPage extends Component {
 
     state = {
-        typing: 'html',
-        screen: '<head>\n    <title>Niveau HTML</title>\n    <meta name="html5">\n    <meta name="level" value="90%">\n</head>\n',
+        typing: '',
+        screen: '',
         svg: {
             html: {
                 class: 'selected',
@@ -106,6 +104,12 @@ class SkillsPage extends Component {
     render() {
         const { html, css, javascript, sql, php } = this.state.svg
         const { screen, typing } = this.state
+        console.log(typing == '')
+
+        if (typing == '') {
+            this.setState({ typing: 'html' })
+            this.typing('html')
+        }
 
         return (
             <section className="technologies">

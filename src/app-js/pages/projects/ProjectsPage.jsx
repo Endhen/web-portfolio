@@ -10,6 +10,8 @@ import cefrani from './assets/cefrani.png'
 import nantes from './assets/nantes.png'
 
 // cdp screenshots
+import actNStop from './assets/analyse_des_risques.png'
+import lvo from './assets/lvo.png'
 
 const devProjects = [
     {
@@ -64,8 +66,8 @@ const devProjects = [
 ]
 const cdpProjects = [
     {
-        title: "Refonte d’un site web",
-        screenshot: resaLouvre,
+        title: "Initialisation d'un projet de refonte",
+        screenshot: lvo,
         realisations: [
             "Benchmark fonctionnel",
             "Audit de qualité web avec le référentiel Opquast",
@@ -79,8 +81,8 @@ const cdpProjects = [
         ]
     },
     {
-        title: "Refonte d’un site web",
-        screenshot: resaLouvre,
+        title: "Analyse de faisabilité d'un projet",
+        screenshot: actNStop,
         realisations: [
             "Analyse des besoins",
             "Analyse des risques",
@@ -163,7 +165,7 @@ class ProjectsPage extends Component {
                     Chez Open Classroom le travail de chaques projet est 
                     formalisé et présenté, renforçant ainsi les 
                     compétences de communication. Pour toutes questions 
-                    n'hésitez pas à me contacter sur <a href="#">LinkedIn</a>.
+                    n'hésitez pas à me contacter sur <a href="https://www.linkedin.com/in/brice-ogou/">LinkedIn</a>.
                 </p>
 
                 <div className="slider">    

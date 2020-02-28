@@ -17,7 +17,7 @@ module.exports = merge( common, {
         historyApiFallback: true,
     },
     plugins: [new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./src/template.html",
         minify: {
             collapseWhitespace: true,
             removeComments: true,
