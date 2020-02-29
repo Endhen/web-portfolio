@@ -178,7 +178,6 @@ header {
         z-index: 10;
         display: none;
         flex-direction: column;
-        justify-content: center;
         top: 0;
         right: 0; 
         width: 0;
@@ -187,16 +186,22 @@ header {
         background-color: #24312d;
 
         a {
+            padding: 30px;
+            border-bottom: 1px solid #909090;
+            color: #d8d8d8;
+
+            &:nth-child(1) {
+                margin-top: 50px;
+                border-top: 1px solid #909090;
+            }
+
             &::before {
                 content: '▷ ';
+                margin-right: 10px;
             }
-            padding: 40px;
-            
-            color: #d8d8d8;
-            border-bottom: 1px solid #909090;
         }
 
-        * { min-width: 80vw; }
+        //* { min-width: 80vw; }
 
     }
     .btn-close {

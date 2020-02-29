@@ -13,10 +13,12 @@
             justify-content: center;
             height: 100%;
         }
+
+        .front-icons, .back-icons{ align-items: center;  }
         
         .writting-dev { margin: space('medium'); }
         
-        svg:not(.writting-dev) { margin: 20px auto; transform: scale(0.9);}
+        svg:not(.writting-dev) { margin: 20px 0 !important; transform: scale(0.9);}
 
         [alt~="MySQL"] { max-width: 80px; }
 
@@ -48,6 +50,8 @@
             width: 370px;
             height: 300px;
         }
+
+        .ace_scrollbar.ace_scrollbar-h { display: none; }
     }
 
     .tools {
@@ -68,11 +72,9 @@
 
 
 @media all and (max-width: 1290px)  {
-    
+
     .typing-animation {
         flex-direction: column;
-
-        .writting-dev { margin: space('medium') 0 !important; }
         
         & > * {
             flex-direction: row !important;
@@ -82,4 +84,26 @@
             margin: space('large') space('large') !important;
         }
     }
+}
+
+@media all and (max-width: 570px) {
+    .technologies {
+        margin: 0 !important;
+        & > * {
+            min-width: 129%;
+        }
+    }
+
+    #screen { 
+        width: 270px !important;
+        margin: 45px 0;
+
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .writting-dev { 
+        margin: space('medium') 0 !important;
+        width: 295px;
+    }
+    .work-env .tools { max-height: unset; }
 }

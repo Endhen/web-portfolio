@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AceEditor from "react-ace"
+import ace from "ace-builds"
 
 import "ace-builds/src-noconflict/mode-html"
 import "ace-builds/src-noconflict/mode-css"
@@ -7,7 +8,6 @@ import "ace-builds/src-noconflict/mode-javascript"
 import "ace-builds/src-noconflict/mode-sql"
 import "ace-builds/src-noconflict/mode-php"
 import "ace-builds/src-noconflict/theme-tomorrow_night"
-
 
 import codingDev from './assets/Coding_Dev.svg'
 import gSuite from './assets/G_Suite.svg'
@@ -38,7 +38,7 @@ class SkillsPage extends Component {
             },
             javascript: {
                 class: '',
-                text: 'const getSkillLevel = (skill) => {\n    skill.name = "javascript";\n    skill.levelPercent = 70;\n    skill.framework = {\n        jQuery: 40,\n        React: 50, // Ce portfolio est une SPA React\n    };\n    skill.bundler = "webpack";\n    return skill;\n}',
+                text: 'const getSkillLevel = (skill) => {\n    skill.name = "javascript";\n    skill.levelPercent = 70;\n    skill.framework = {\n        jQuery: 40,\n        React: 50, \n        // Ce portfolio est une SPA React\n    };\n    skill.bundler = "webpack";\n    return skill;\n}',
             },
             sql: {
                 class: '',    
@@ -101,22 +101,23 @@ class SkillsPage extends Component {
         }
     }
 
-    render() {
-        const { html, css, javascript, sql, php } = this.state.svg
-        const { screen, typing } = this.state
-        console.log(typing == '')
-
-        if (typing == '') {
+    componentDidMount() {
+        if (this.state.typing == '') {
             this.setState({ typing: 'html' })
             this.typing('html')
         }
+    }
+
+    render() {
+        const { html, css, javascript, sql, php } = this.state.svg
+        const { screen, typing } = this.state
 
         return (
             <section className="technologies">
                 <section className="web-skills">
                     <h2>Compétences de développement web</h2>
                     <p>
-                        J'ai appris la programation côté back-end avec PHP 
+                        J'ai appris la programmation côté back-end avec PHP 
                         sur le framework Symfony. Et le développement front-end 
                         avec HTML et CSS et JS avec la librairie jQuery, je me 
                         forme actuellement sur React.
@@ -141,21 +142,22 @@ class SkillsPage extends Component {
                         </div>
                         <div className="illustration">
                         <AceEditor
-                            className="screen"
-                            mode={typing}
-                            theme="tomorrow_night"
-                            onChange={() => { return screen }}
-                            value={screen}
-                            name="screen"
-                            editorProps={{ $blockScrolling: false }}
-                            highlightActiveLine={false}
-                            setOptions={{
-                                blockScrolling: true,
-                                readOnly: true,
-                                showLineNumbers: true,
-                                tabSize: 4,
-                            }}
-                        />
+                                className="screen"
+                                mode={typing == ''?'html':typing}
+                                width="340px"
+                                height="230px"
+                                theme="tomorrow_night"
+                                onChange={() => { return screen }}
+                                value={screen}
+                                name="screen"
+                                editorProps={{ $blockScrolling: true }}
+                                highlightActiveLine={false}
+                                setOptions={{
+                                    readOnly: true,
+                                    showLineNumbers: true,
+                                    tabSize: 4,
+                                }}
+                            />
                             <img className="writting-dev" src={codingDev} alt="Écran de présentaion des comptétences"/>
                         </div>                              
                         <div className="back-icons">

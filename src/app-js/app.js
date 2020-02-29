@@ -42,19 +42,19 @@ function App() {
             </header>
             <div className="content" key="content">
                 <Switch>
-                    <Route path="/contact">
+                    <Route exact path="/contact">
                         <ContactPage/>
                     </Route>
-                    <Route path="/projects">
+                    <Route exact path="/projects">
                         <ProjectsPage/>
                     </Route>
-                    <Route path="/skills">
+                    <Route exact path="/skills">
                         <SkillsPage/>
                     </Route>
-                    <Route path="/profile">
+                    <Route exact path="/profile">
                         <ProfilePage/>
                     </Route>
-                    <Route path="/legal-notice">
+                    <Route exact path="/legal-notice">
                         <LegalNotice/>
                     </Route>
                     <Route exact path="/">

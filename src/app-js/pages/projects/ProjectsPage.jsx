@@ -117,7 +117,6 @@ class ProjectsPage extends Component {
         if (index < 0) {
             return projects.length-1
         }
-        console.log(index)
         return index
     }
 
@@ -132,12 +131,9 @@ class ProjectsPage extends Component {
     }
 
     changeMode = () => {
-        console.log('ok')
         if (this.state.mode == 'dev') {
-            console.log('cdp')
             this.setState({ mode: 'cdp', pos: 0})
         } else {
-            console.log('dev')
             this.setState({ mode: 'dev', pos: 0})
         }
     }
@@ -162,9 +158,9 @@ class ProjectsPage extends Component {
                     <span onClick={this.changeMode} className={spanVisible}>{mode == 'cdp'?'Développement web':'Gestion de projet'}</span>
                 </h2>
                 <p>
-                    Chez Open Classroom le travail de chaques projet est 
+                    Chez Open Classroom le travail de chaque projet est 
                     formalisé et présenté, renforçant ainsi les 
-                    compétences de communication. Pour toutes questions 
+                    compétences de communication. Pour toutes questions, 
                     n'hésitez pas à me contacter sur <a href="https://www.linkedin.com/in/brice-ogou/">LinkedIn</a>.
                 </p>
 

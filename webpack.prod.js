@@ -7,29 +7,35 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = merge(common, {
+module.exports = merge( common, {
     mode: "production",
+    watchOptions: {
+        ignored: /node_modules/
+    },
     output: {
         filename: "main-[contentHash].js",
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
+        new HtmlWebpackPlugin({
+        template: "./src/template.html",
+        minify: {
+            collapseWhitespace: true,
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            useShortDoctype: true
+        }}),
         new MiniCssExtractPlugin({ filename: "[name]-[contentHash].css"}),
         new CleanWebpackPlugin(),
     ],
     optimization: {
         minimizer: [
-            new HtmlWebpackPlugin({
-                template: "./src/template.html",
-                minify: {
-                    collapseWhitespace: true,
-                    removeComments: true,
-                    removeRedundantAttributes: true,
-                    removeScriptTypeAttributes: true,
-                    removeStyleLinkTypeAttributes: true,
-                    useShortDoctype: true
-                }
-            }),
             new OptimizeCssAssetsPlugin(),
             new TerserPlugin()
         ],

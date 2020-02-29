@@ -21,6 +21,14 @@
 
     .frame > img {
         height: 230px;
+    }
+
+    .frame {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        max-width: 87vw;
+
         border-radius: 15px;
         box-shadow: -15px 11px 19px 0px #0000002e;
     }
