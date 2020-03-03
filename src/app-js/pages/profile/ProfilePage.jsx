@@ -67,9 +67,9 @@ const ProfilePage = () => {
                     </p>
                 </div>
             </section>
-            <a href="/OGOU_Brice_CV.pdf" className="cv" target="blank">
+            <a href="/OGOU_Brice_CV.pdf" className="cv" target="_blank">
                 Télécharger mon cv
-                <img src={externalLink} className="ext-link"/>
+                <img src={externalLink} className="ext-link" alt="symbol lien exterieur"/>
             </a>
             
         </section>

@@ -10,13 +10,34 @@
     <meta name="subject" content="Brice OGOU : Portfolio - Chef de projet / Développeur Web Junior">
     <meta name="description" content="À l’écoute de propositions d’intégration au sein d’une équipe en tant que chef de projet junior ou développeur junior avec possibilité d’évolution. Mobile et disponible sur Nantes ">
     
-    <meta property="og:url" content="http://www.og-brice.com">
-    <meta property="og:image" content="http://www.og-brice.com/public/images/profil.png" />
+    <meta property="fb:app_id" content="214255536627121">
+    <meta property="og:type" content="website">
+    <meta property="og:name" content="ogou_brice">
+    <meta property="og:url" content="https://og-brice.com">
+    <meta property="og:image" content="https://og-brice.com/profile.jpg" />
+    <meta property="og:image:height" content="1454px" />
+    <meta property="og:image:width" content="1149px" />
     <meta property="og:title" content="Chef de projet - Développeur Web | Brice OGOU">
     <meta property="og:description" content="Portfolio de Brice Ogou, Chef de projet / Développeur Junior sur Nantes">
     
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://og-brice.com/profile.jpg">
+    <meta name="twitter:title" content="Chef de projet - Développeur Web | Brice OGOU">
+    <meta name="twitter:description"  content="Portfolio de Brice Ogou, Chef de projet / Développeur Junior sur Nantes">
+    <meta name="twitter:creator" content="ogou_brice">
+
     <link rel="icon" href="/favicon.ico">
     <title>Chef de projet - Développeur Web | Brice OGOU</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159447427-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159447427-1');
+    </script>
 </head>
 <body>
     <aside>
@@ -24,35 +45,47 @@
             <div class="profile__img__container">
                 <img src="./assets/profile.png" alt="photo de profil">
             </div>
-            <h1>OGOU BRICE</h1>
+            <h1>
+                OGOU BRICE
+            </h1>
             <h2>Chef de projet web junior</h2>
             <address>
                 <a href="tel://33-06958638">
-                    <img src="./assets/phone.svg">
+                    <img src="./assets/phone.svg" alt="Icone téléphone">
                     06 95 86 38 51
                 </a>
                 <a href="mailto:bogou@gmail.com">
-                    <img src="./assets/at.svg">
+                    <img src="./assets/at.svg" alt="Icone arobase">
                     bogou.ncho@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/brice-ogou/">
-                    <img src="./assets/linkedin.svg">
+                <a href="https://www.linkedin.com/in/brice-ogou/" target="_blank">
+                    <img src="./assets/linkedin.svg" alt="Icone LinkedIn">
                     Linkedin.com/Brice-Ogou
                 </a>
-                <a href="https://github.com/Endhen">
-                    <img src="./assets/git.svg">
+                <a href="https://github.com/Endhen"  target="_blank">
+                    <img src="./assets/git.svg" alt="Icone Git">
                     Github.com/Brice-Ogou
                 </a>
             </address>
         </div>
 
         <div class="legal-notice">
-            <a href="/legal-notice">Mentions légales</a>
+            <a href="/mentions-legales">Mentions légales</a>
         </div>
     </aside>
     <div class="container" id="root">
 
     </div>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Person",
+            "name": "OGOU Brice",
+            "jobTitle": "Chef de projet web junior",
+            "email": "bogou.ncho@gmail.com",
+            "follows": "https://www.linkedin.com/in/brice-ogou/"
+        }
+    </script>
 </body>
 </html>
 

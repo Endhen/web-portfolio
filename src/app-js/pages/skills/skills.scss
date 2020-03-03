@@ -18,7 +18,7 @@
         
         .writting-dev { margin: space('medium'); }
         
-        svg:not(.writting-dev) { margin: 20px 0 !important; transform: scale(0.9);}
+        svg:not(.writting-dev) { margin: 20px 0; transform: scale(0.9); }
 
         [alt~="MySQL"] { max-width: 80px; }
 
@@ -81,7 +81,7 @@
         }
 
         svg:not(.writting-dev) { 
-            margin: space('large') space('large') !important;
+            margin: 20px !important;
         }
     }
 }

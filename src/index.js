@@ -148,4 +148,3 @@ const links = document.getElementsByTagName('a')
 for (let a of links) {
     a.addEventListener("click", setMenuStyle)
 }
-

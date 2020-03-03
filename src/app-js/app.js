@@ -25,10 +25,10 @@ function App() {
         <Router>
             <header key="header">
                 <nav className="menu">
-                    <Link data-name="profile" to="/profile">Profil</Link>
-                    <Link data-name="skills" to="/skills">Compétences</Link>
-                    <Link data-name="projects" to="/projects">Projets</Link>
-                    <a data-name="blog" href="" target="">Blog</a>
+                    <Link data-name="profil" to="/profil">Profil</Link>
+                    <Link data-name="competances" to="/competences">Compétences</Link>
+                    <Link data-name="projets" to="/projets">Projets</Link>
+                    <a href="https://blog.og-brice.com">Blog</a>
                     <Link data-name="contact" to="/contact">Contact</Link>
                     <div className="btn-close">fermer le menu ⵝ</div>
                     <div className="indicator"></div>
@@ -45,20 +45,20 @@ function App() {
                     <Route exact path="/contact">
                         <ContactPage/>
                     </Route>
-                    <Route exact path="/projects">
+                    <Route exact path="/projets">
                         <ProjectsPage/>
                     </Route>
-                    <Route exact path="/skills">
+                    <Route exact path="/competences">
                         <SkillsPage/>
                     </Route>
-                    <Route exact path="/profile">
+                    <Route exact path="/profil">
                         <ProfilePage/>
                     </Route>
-                    <Route exact path="/legal-notice">
+                    <Route exact path="/mentions-legales">
                         <LegalNotice/>
                     </Route>
                     <Route exact path="/">
-                        <Redirect to="/profile"/>
+                        <Redirect to="/profil"/>
                     </Route>
                     <Route path="*">
                         <Error404/>

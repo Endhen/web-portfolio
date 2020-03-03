@@ -140,17 +140,17 @@ header {
             transition-delay: 0.2s;
         }
 
-        .start-profile, a:nth-child(1):hover ~ .indicator {
+        .start-profil, a:nth-child(1):hover ~ .indicator {
             left: 10%;
             opacity: 1;
             width: 10%;
         }
-        .start-skills, a:nth-child(2):hover ~ .indicator {
+        .start-competances, a:nth-child(2):hover ~ .indicator {
             left: 24%;
             opacity: 1;
             width: 168px;
         }
-        .start-projects, a:nth-child(3):hover ~ .indicator {
+        .start-projets, a:nth-child(3):hover ~ .indicator {
             left: 48%;
             opacity: 1;
             width: 13%;
