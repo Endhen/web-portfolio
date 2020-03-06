@@ -49,7 +49,7 @@ $padding: 30px;
         }
     }
     p { font-size: 0.9em; color: #ff7171; margin-bottom: 5px;}
-    .error {
+    .form-error {
         border: 1px solid #ff7171 * 2;
         
         &::placeholder { color: #ff7171; opacity: 1; }

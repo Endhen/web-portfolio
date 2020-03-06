@@ -100,7 +100,7 @@ class ContactPage extends Component {
                             <p>{error.email}</p>:''
                         }
                         <input 
-                            className={error.email?"error":''}
+                            className={error.email?"form-error":''}
                             type="text" 
                             name="email" 
                             defaultValue={email || ''} 
@@ -111,7 +111,7 @@ class ContactPage extends Component {
                             <p>{error.sujet}</p>:''
                         }
                         <input 
-                            className={error.sujet?"error":''}
+                            className={error.sujet?"form-error":''}
                             type="text" 
                             name="sujet" 
                             defaultValue={sujet || ''} 
@@ -122,7 +122,7 @@ class ContactPage extends Component {
                             <p>{error.message}</p>:''
                         }
                         <textarea 
-                            className={error.message?"error":''}
+                            className={error.message?"form-error":''}
                             name="message" 
                             defaultValue={message || ''} 
                             placeholder="Message" 

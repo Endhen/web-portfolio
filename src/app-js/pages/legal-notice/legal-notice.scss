@@ -1,3 +1,19 @@
 .legal-mention {
     @extend %page
 }
+
+.disable-ga {
+    @extend %btn;
+    height: 40px;
+    max-width: 250px;
+    min-width: 250px;
+    margin: 50px auto !important;
+    cursor: pointer;
+}
+
+.activate-ga {
+    @extend .disable-ga;
+    box-shadow: none;
+    cursor: pointer;
+    background: #b7b7b7;
+}

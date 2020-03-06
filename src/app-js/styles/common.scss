@@ -87,3 +87,15 @@ button {
     padding: 0;
     border: none;
 }
+
+%btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+
+    color: white !important;
+    background: gradient(195deg);
+    box-shadow: -4px 5px 9px 0px #0000001a;
+    cursor: pointer;
+}
