@@ -5,7 +5,7 @@ class LegalNotice extends Component {
     state = {
         button: {
             class: "disable-ga",
-            text: "Déactiver Google Analytics"
+            text: "Désactiver Google Analytics"
         }
     }
 
@@ -17,7 +17,7 @@ class LegalNotice extends Component {
             this.setState({
                 button: {
                     class: "disable-ga",
-                    text: "Déactiver Google Analytics"
+                    text: "Désactiver Google Analytics"
                 }
             })
         } 
@@ -26,7 +26,7 @@ class LegalNotice extends Component {
             this.setState({
                 button: {
                     class: "activate-ga",
-                    text: "Google Analytics est déactivé"
+                    text: "Google Analytics est désactivé"
                 }
             })
         }
