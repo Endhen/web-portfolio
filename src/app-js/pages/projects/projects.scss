@@ -11,6 +11,8 @@
 .projects {
     @extend %page;
 
+    min-height: 450px;
+
     .project.mode-cdp { flex-direction: column; }
     .slider, .project { display: flex; }
     .slider h2 { margin:  15px 0 20px 60px; }

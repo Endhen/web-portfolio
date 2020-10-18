@@ -33,7 +33,7 @@ aside {
         content: '';
         display: block;
         position: absolute;
-        height: 1000px;
+        height: 1300px;
         width: 800px;
         left: 0;
         top:0;
@@ -230,7 +230,10 @@ header {
     }
 }
 
-.content { padding: space('large') 0; }
+
+.content { 
+    padding: space('large') 0; 
+}
 
 .profile {
     display: flex;
